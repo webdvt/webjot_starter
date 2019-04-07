@@ -5,10 +5,9 @@ class Ideas extends Component {
   render() {
     return (
       <div>
-        <h1>Ideas: </h1>
-         <Idea/>
-         <Idea/>
-         <Idea/>
+        {this.props.ideas.map(idea => {
+          return <Idea key={idea.id} idea={idea} deleteIdea={this.props.deleteIdea}/>
+        })}
       </div>
     );
   }
